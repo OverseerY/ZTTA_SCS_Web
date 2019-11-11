@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ЗТТА СКОО</title>
+    <link rel="icon" href="images/tag_icon.png">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="scripts/main.js"></script>
+    <script src="scripts/jquery-3.4.1.min.js"></script>
+    <script src="scripts/popper.min.js"></script>
+    <script src="scripts/jquery.dataTables.min.js"></script>
+    <script src="scripts/dataTables.bootstrap4.min.js"></script>
+    <script src="scripts/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="input-group mb-3">
+            <select class="form-control" title="Period" id="period_selector">
+                <option>Сегодня</option>
+                <option>Вчера</option>
+                <option>Неделя</option>
+                <option>Месяц</option>
+            </select>
+            <div class="input-group-append">
+                <button class="btn btn-primary" type="button" id="action_button" onclick="startPoint()">Применить</button>
+            </div>
+        </div>
+
+        <div id="right_column">
+            <div class="card mb-3">
+                <div class="alert-info card-body">
+                    <h5 class="card-title">ЗТТА СКОО</h5>
+                    <h6 class="card-subtitle mb-2">Система контроля обхода охраной подконтрольной территории</h6>
+                    <p class="card-text">С помощью данного сервиса можно узнать в какое время сотрудники охраны предприятия
+                        делали обход территории и отмечались в контрольных точках.</p>
+                    <p>Система позволит увидеть данные за выбранный период времени (по умолчанию - за последние сутки) для конкретного участка.</p>
+                    <a href="#" onclick="startPoint()" class="card-link">Ок, понятно</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
