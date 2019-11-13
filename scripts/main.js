@@ -50,9 +50,38 @@ function loadJson(url, callback) {
     xobj.onreadystatechange = function () {
         if (xobj.readyState === 4 && xobj.status === 200) {
             callback(xobj.responseText);
+        } else if (xobj.status !== 200) {
+            buildErrorMessage();
         }
     };
     xobj.send(null);
+}
+
+function buildErrorMessage() {
+    let root = document.getElementById("alert_msg");
+
+    if (!document.getElementById("custom_alert")) {
+        let error_alert = document.createElement("div");
+        let close_button = document.createElement("button");
+        let button_span = document.createElement("span");
+
+        close_button.setAttribute("type", "button");
+        close_button.setAttribute("class", "close");
+        close_button.setAttribute("data-dismiss", "alert");
+        close_button.setAttribute("aria-label", "Close");
+
+        button_span.setAttribute("aria-hidden", "true");
+        button_span.innerHTML = "&times;";
+        close_button.appendChild(button_span);
+
+        error_alert.setAttribute("id", "custom_alert");
+        error_alert.setAttribute("class", "alert alert-danger alert-dismissible fade show mt-3");
+        error_alert.setAttribute("role", "alert");
+        error_alert.innerHTML = "Проблема получения данных. Свяжитесь с отделом ИТ чтобы решить эту проблему";
+        error_alert.appendChild(close_button);
+        root.appendChild(error_alert);
+        root.setAttribute("class", "visible");
+    }
 }
 
 function parseJson(response) {

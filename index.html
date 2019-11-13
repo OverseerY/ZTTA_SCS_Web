@@ -16,7 +16,7 @@
     <script src="scripts/bootstrap.min.js"></script>
 </head>
 <body>
-    <div class="container">
+    <div id="root" class="container">
         <div class="input-group mb-3">
             <select class="form-control" title="Period" id="period_selector">
                 <option>Сегодня</option>
@@ -28,6 +28,8 @@
                 <button class="btn btn-primary" type="button" id="action_button" onclick="startPoint()">Применить</button>
             </div>
         </div>
+
+        <div id="alert_msg" class="invisible"></div>
 
         <div id="right_column">
             <div class="card mb-3">
